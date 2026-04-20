@@ -1,3 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Home() {
-  return <h2>Hola mundo! Componente Home.tsx</h2>;
+  const navigate = useNavigate();
+  return (
+    <>
+      <h2>Hola mundo! componente Home.tsx</h2>
+      <button onClick={() => navigate("/product")}>Enviar</button>
+    </>
+  );
 }
