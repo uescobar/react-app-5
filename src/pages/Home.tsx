@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  throw new Error("Error! Chanchito triste :(");
+  // throw new Error("Error! Chanchito triste :(");
   const navigate = useNavigate();
   return (
     <>
