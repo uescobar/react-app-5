@@ -1,11 +1,19 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 type Props = {};
 
 function Layout({}: Props) {
   return (
     <div>
-      <Link to="/">Inicio</Link> <Link to="/products">Productos</Link>
+      <NavLink className={({ isActive }) => (isActive ? "enabled" : "")} to="/">
+        Inicio
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "enabled" : "")}
+        to="/products"
+      >
+        Productos
+      </NavLink>
       <Outlet />
     </div>
   );
