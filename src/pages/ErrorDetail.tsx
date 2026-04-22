@@ -1,9 +1,17 @@
-import React from "react";
+import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 type Props = {};
 
 function ErrorDetail({}: Props) {
-  return <div>Ha ocurrido un error :(</div>;
+  const error = useRouteError();
+
+  return (
+    <div>
+      {isRouteErrorResponse(error)
+        ? "La página no existe"
+        : `Ha ocurrido un error ${(error as Error).message}`}
+    </div>
+  );
 }
 
 export default ErrorDetail;
