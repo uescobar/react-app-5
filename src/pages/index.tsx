@@ -4,6 +4,7 @@ import Product from "./Product";
 import ProductDetail from "./ProductDetail";
 import Layout from "./Layout";
 import ErrorDetail from "./ErrorDetail";
+import AuthorizedUsers from "./AuthorizedUsers";
 
 //const router = createBrowserRouter([{ path: "/", element: <>Hola Mundo!</> }]);
 const router = createBrowserRouter([
@@ -16,8 +17,13 @@ const router = createBrowserRouter([
       // { path: "/products", element: <Product /> },
       // { path: "/products/:id", element: <ProductDetail /> },
       { index: true, element: <Home /> },
-      { path: "products", element: <Product /> },
-      { path: "products/:id", element: <ProductDetail /> },
+      {
+        element: <AuthorizedUsers />,
+        children: [
+          { path: "products", element: <Product /> },
+          { path: "products/:id", element: <ProductDetail /> },
+        ],
+      },
     ],
   },
 
